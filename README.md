@@ -1,18 +1,19 @@
-# oscura.nvim
+# Oscura.nvim
 
-A dark, minimal colorscheme for Neovim with subtle colors and excellent contrast.
+A dark theme for Neovim that focuses on readability and aesthetics.
 
 ## Features
 
-- Dark, minimal design
-- Subtle color palette
-- Support for various Neovim features:
-  - LSP diagnostics
-  - Git signs
-  - Treesitter
-  - Telescope
-  - NvimTree
-  - And more!
+- Clean and modern design
+- Support for LSP diagnostics
+- Support for Treesitter
+- Support for popular plugins (Telescope, NvimTree, etc.)
+- Git integration
+- Configurable options
+
+## Requirements
+
+- Neovim >= 0.7.0
 
 ## Installation
 
@@ -24,7 +25,23 @@ A dark, minimal colorscheme for Neovim with subtle colors and excellent contrast
     lazy = false,
     priority = 1000,
     config = function()
-        vim.cmd.colorscheme("oscura")
+        require("oscura").setup({
+            -- Optional configuration
+            italic_comments = true,
+            italic_keywords = false,
+            italic_functions = false,
+            italic_variables = false,
+            bold_functions = false,
+            bold_keywords = false,
+            bold_variables = false,
+            underline_variables = false,
+            strikethrough_deprecated = true,
+            undercurl_diagnostics = true,
+            bold_active_tab = true,
+            italic_signature_help = true,
+            bold_todo = true,
+            italic_todo = true,
+        })
     end,
 }
 ```
@@ -35,7 +52,9 @@ A dark, minimal colorscheme for Neovim with subtle colors and excellent contrast
 use {
     "thehamsti/oscura.nvim",
     config = function()
-        vim.cmd.colorscheme("oscura")
+        require("oscura").setup({
+            -- Optional configuration
+        })
     end,
 }
 ```
@@ -53,13 +72,22 @@ vim.cmd.colorscheme("oscura")
 
 ## Configuration
 
-No configuration is required! The colorscheme works out of the box. However, if you want to customize it, you can do so by setting up the colorscheme with custom options:
+The theme can be configured with the following options:
 
-```lua
-require("oscura").setup({
-    -- Add custom options here if needed in the future
-})
-```
+- `italic_comments`: Whether to use italic for comments (default: true)
+- `italic_keywords`: Whether to use italic for keywords (default: false)
+- `italic_functions`: Whether to use italic for functions (default: false)
+- `italic_variables`: Whether to use italic for variables (default: false)
+- `bold_functions`: Whether to use bold for functions (default: false)
+- `bold_keywords`: Whether to use bold for keywords (default: false)
+- `bold_variables`: Whether to use bold for variables (default: false)
+- `underline_variables`: Whether to use underline for variables (default: false)
+- `strikethrough_deprecated`: Whether to use strikethrough for deprecated items (default: true)
+- `undercurl_diagnostics`: Whether to use undercurl for diagnostics (default: true)
+- `bold_active_tab`: Whether to use bold for active tab (default: true)
+- `italic_signature_help`: Whether to use italic for active parameter in signature help (default: true)
+- `bold_todo`: Whether to use bold for todo comments (default: true)
+- `italic_todo`: Whether to use italic for todo comments (default: true)
 
 ## Screenshots
 
@@ -67,4 +95,4 @@ require("oscura").setup({
 
 ## License
 
-MIT License 
+MIT 
