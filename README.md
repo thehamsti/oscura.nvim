@@ -1,6 +1,6 @@
 # Oscura.nvim
 
-A dark theme for Neovim that focuses on readability and aesthetics.
+A dark theme for Neovim that focuses on readability and aesthetics. All credit to Narrative (https://github.com/narative/oscura) just attempted to translate it into nvim.
 
 ## Features
 
@@ -46,30 +46,6 @@ A dark theme for Neovim that focuses on readability and aesthetics.
 }
 ```
 
-### Using packer
-
-```lua
-use {
-    "thehamsti/oscura.nvim",
-    config = function()
-        require("oscura").setup({
-            -- Optional configuration
-        })
-    end,
-}
-```
-
-### Using vim-plug
-
-```vim
-Plug 'hamsti/oscura.nvim'
-```
-
-Then in your init.vim or init.lua:
-```lua
-vim.cmd.colorscheme("oscura")
-```
-
 ## Configuration
 
 The theme can be configured with the following options:
@@ -92,7 +68,3 @@ The theme can be configured with the following options:
 ## Screenshots
 
 [Add screenshots here]
-
-## License
-
-MIT 
