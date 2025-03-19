@@ -261,9 +261,6 @@ function M.setup(opts)
     
     -- Set up highlights
     highlights.setup()
-    
-    -- Set the colorscheme
-    vim.cmd("colorscheme oscura")
 end
 
 return M 

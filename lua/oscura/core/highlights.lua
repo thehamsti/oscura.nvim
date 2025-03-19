@@ -35,9 +35,9 @@ function M.setup()
     set_hl("SpecialKey", { fg = colors.line_nr })
     set_hl("Visual", { bg = colors.selection })
     set_hl("VisualNOS", { bg = colors.selection })
-    set_hl("Search", { bg = "#EAEC8A54", fg = colors.fg })
-    set_hl("IncSearch", { bg = "#EAEC8A54", fg = colors.fg })
-    set_hl("CurSearch", { bg = "#EAEC8A54", fg = colors.fg })
+    set_hl("Search", { bg = colors.selection_highlight, fg = colors.fg })
+    set_hl("IncSearch", { bg = colors.selection_highlight, fg = colors.fg })
+    set_hl("CurSearch", { bg = colors.selection_highlight, fg = colors.fg })
     set_hl("EndOfBuffer", { fg = colors.line_nr })
     set_hl("Whitespace", { fg = colors.line_nr })
     set_hl("VertSplit", { fg = colors.line_nr, bg = colors.bg })
@@ -78,7 +78,7 @@ function M.setup()
     set_hl("WinBarNC", { fg = colors.gray, bg = colors.bg })
     
     -- Others
-    set_hl("MatchParen", { bg = "#FFFFFF16" })
+    set_hl("MatchParen", { bg = colors.selection_highlight })
     
     -- -------------------------------------------------
     -- 3. Syntax Highlighting
@@ -186,9 +186,9 @@ function M.setup()
     set_hl("DiagnosticUnderlineInfo", { undercurl = true, sp = colors.info })
     set_hl("DiagnosticUnderlineHint", { undercurl = true, sp = colors.hint })
     
-    set_hl("LspReferenceText", { bg = "#FFFFFF08" })
-    set_hl("LspReferenceRead", { bg = "#FFFFFF08" })
-    set_hl("LspReferenceWrite", { bg = "#FFFFFF08" })
+    set_hl("LspReferenceText", { bg = colors.selection_highlight })
+    set_hl("LspReferenceRead", { bg = colors.selection_highlight })
+    set_hl("LspReferenceWrite", { bg = colors.selection_highlight })
     
     set_hl("LspSignatureActiveParameter", { fg = colors.yellow, italic = true })
     set_hl("LspCodeLens", { fg = colors.comment })
@@ -222,6 +222,17 @@ function M.setup()
     set_hl("NvimTreeEmptyFolderName", { fg = colors.comment })
     set_hl("NvimTreeFilename", { fg = colors.fg })
     set_hl("NvimTreeSpecialFile", { fg = colors.purple })
+    set_hl("NvimTreeGitDirty", { fg = colors.yellow })
+    set_hl("NvimTreeGitNew", { fg = colors.fg })
+    
+    -- Bracket pairs
+    set_hl("BracketMatch", { fg = colors.bracket_1 })
+    set_hl("BracketMatch2", { fg = colors.bracket_2 })
+    set_hl("BracketMatch3", { fg = colors.bracket_3 })
+    set_hl("BracketMatch4", { fg = colors.bracket_4 })
+    set_hl("BracketMatch5", { fg = colors.bracket_5 })
+    set_hl("BracketMatch6", { fg = colors.bracket_6 })
+    set_hl("BracketMatchUnexpected", { fg = colors.bracket_unexpected })
 end
 
 return M 
